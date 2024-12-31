@@ -1,0 +1,24 @@
+<div>
+    <section class="content">
+        <div class="tab" data-group="party">
+            <div class="table-row header">
+                {{> "modules/party-overview/templates/parts/FilterButton.html"}}
+                <div class="text">Name</div>
+                <div class="num" title="Health"><i class="fas fa-heart"></i></div>
+                <div class="num" title="MP"><i class="fas fa-magic"></i></div>
+                <div class="num" title="MP"><i class="fas fa-magnet"></i></div>
+            </div>
+
+            {{#each actors as | actor | }}
+            <div class="table-row">
+                {{> "modules/party-overview/templates/parts/ToggleVisibilityButton.html" actor=actor}}
+                <div class="text">{{ actor.shortestName }}</div>
+
+                <div class="num">{{ actor.hp.value }}/{{ actor.hp.max }}</div>
+                <div class="num">{{ actor.mp.value }}/{{ actor.mp.max }}</div>
+                <div class="num">{{ actor.fp.value }}/{{ actor.fp.max }}</div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+</div>

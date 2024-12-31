@@ -77,6 +77,29 @@ export class SystemProvider {
 	}
 }
 
+export class smtProvider extends SystemProvider {
+	/**
+	 * 
+	 * @override
+	 * @param {Actor} actor 
+	 * @returns 
+	 */
+	getActorDetails(actor) {
+		const data = actor.system;
+		return {
+			id: actor.id,
+			name: actor.name,
+			hp: data.hp,
+			mp: data.mp,
+			fp: data.fp
+		};
+	}
+	
+	get template() {
+		return "/modules/party-overview/templates/smt-tc.hbs";
+	}
+}
+
 export class archmageProvider extends SystemProvider {
 	constructor(id) {
 		super(id);

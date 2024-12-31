@@ -1,5 +1,5 @@
 // prettier-ignore
-import { CoC7Provider, demonlordProvider, GURPSProvider, SystemProvider, archmageProvider, bitdProvider, cofSystemProvider, cyphersystemProvider, dccProvider, dnd35eProvider, dnd4eProvider, dnd5eProvider, pf1Provider, pf2eProvider, scumAndVillainyProvider, sfrpgProvider, shinobigamiProvider, swadeProvider, tormenta20Provider, wfrp4eProvider } from "./SystemProvider.js";
+import { CoC7Provider, demonlordProvider, GURPSProvider, SystemProvider, smtProvider, archmageProvider, bitdProvider, cofSystemProvider, cyphersystemProvider, dccProvider, dnd35eProvider, dnd4eProvider, dnd5eProvider, pf1Provider, pf2eProvider, scumAndVillainyProvider, sfrpgProvider, shinobigamiProvider, swadeProvider, tormenta20Provider, wfrp4eProvider } from "./SystemProvider.js";
 
 export const availableSystemProviders = {};
 export let currentSystemProvider = undefined;
@@ -42,6 +42,9 @@ export function updateSystemProvider() {
 export function initApi() {
 	const systemProviders = [];
 	switch (game.system.id) {
+		case "smt-tc":
+			systemProviders.push(new smtProvider("native.smt-tc"));
+			break;
 		case "archmage":
 			systemProviders.push(new archmageProvider("native.archmage"));
 			break;
