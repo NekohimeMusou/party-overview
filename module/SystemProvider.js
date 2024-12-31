@@ -91,7 +91,8 @@ export class smtProvider extends SystemProvider {
 			name: actor.name,
 			hp: data.hp,
 			mp: data.mp,
-			fp: data.fp
+			fp: data.fp,
+			tnBonuses: data.tnBonuses,
 		};
 	}
 	

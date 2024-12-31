@@ -4,9 +4,10 @@
             <div class="table-row header">
                 {{> "modules/party-overview/templates/parts/FilterButton.html"}}
                 <div class="text">Name</div>
-                <div class="num" title="Health"><i class="fas fa-heart"></i></div>
+                <div class="num" title="HP"><i class="fas fa-heart"></i></div>
                 <div class="num" title="MP"><i class="fas fa-magic"></i></div>
-                <div class="num" title="MP"><i class="fas fa-magnet"></i></div>
+                <div class="num" title="FP"><i class="fas fa-magnet"></i></div>
+                <div class="num" title="Aid"><i class="fas fa-plus"></i></div>
             </div>
 
             {{#each actors as | actor | }}
@@ -17,6 +18,7 @@
                 <div class="num">{{ actor.hp.value }}/{{ actor.hp.max }}</div>
                 <div class="num">{{ actor.mp.value }}/{{ actor.mp.max }}</div>
                 <div class="num">{{ actor.fp.value }}/{{ actor.fp.max }}</div>
+                <div class="num">{{ actor.tnBonuses }}</div>
             </div>
             {{/each}}
         </div>
