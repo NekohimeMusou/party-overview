@@ -92,7 +92,7 @@ export class smtProvider extends SystemProvider {
 			hp: data.hp,
 			mp: data.mp,
 			fp: data.fp,
-			tnBonuses: data.tnBonuses,
+			tnBoosts: data.tnBoosts,
 		};
 	}
 	
